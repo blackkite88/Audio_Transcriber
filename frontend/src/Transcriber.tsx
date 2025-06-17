@@ -20,7 +20,7 @@ const Transcriber: React.FC = () => {
     formData.append("file", audioFile);
 
     try {
-      const res = await fetch("https://audio-transcriber-oq3e.vercel.app//transcribe", {
+      const res = await fetch("https://audio-transcriber-dxni.onrender.com/transcribe", {
         method: "POST",
         body: formData,
       });
