@@ -2,3 +2,4 @@ fastapi
 uvicorn
 faster_whisper
 python-multipart
+python-dotenv
