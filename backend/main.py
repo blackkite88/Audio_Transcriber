@@ -25,7 +25,7 @@ async def transcribe(file: UploadFile = File(...)):
             temp_path = tmp.name
 
         # Transcribe using faster-whisper
-        segments, info = model.transcribe(temp_path, beam_size=1, language="en")
+        segments, info = model.transcribe(temp_path, beam_size=1, language="en", max_new_tokens=1024)
 
         # Build transcript text from segments
         transcript = "".join([seg.text for seg in segments])
