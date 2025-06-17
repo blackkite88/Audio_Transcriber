@@ -13,7 +13,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-model = WhisperModel("base", device="cpu", compute_type="int8")
+model = WhisperModel("base", device="CUDA", compute_type="float16")
 
 @app.post("/transcribe")
 async def transcribe(file: UploadFile = File(...)):
