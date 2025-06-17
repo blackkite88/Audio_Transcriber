@@ -6,12 +6,20 @@ import shutil
 
 app=FastAPI()
 
+app = FastAPI()
+
+# Set your frontend domain here
+origins = [
+    "https://audio-transcriber-mocha.vercel.app",  # Replace with your actual frontend URL
+]
+
+# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://audio-transcriber-mocha.vercel.app/", "http://localhost:3000"],  # frontend port
+    allow_origins=origins,           # Only allow your frontend
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],             # Or ["POST"] if you're strict
+    allow_headers=["*"],             # Or specific headers like ["Content-Type"]
 )
 model = WhisperModel("tiny", device="cpu", compute_type="int8")
 
