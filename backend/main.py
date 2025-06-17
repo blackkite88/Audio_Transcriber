@@ -8,7 +8,7 @@ app=FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", https://audio-transcriber-mocha.vercel.app/, "http://localhost:3000"],  # frontend port
+    allow_origins=["http://localhost:5173", "https://audio-transcriber-mocha.vercel.app/", "http://localhost:3000"],  # frontend port
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
