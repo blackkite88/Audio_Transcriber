@@ -51,7 +51,7 @@ const Transcriber: React.FC = () => {
         formData.append("file", file);
 
         try {
-          const res = await fetch("http://localhost:8000/transcribe", {
+          const res = await fetch("https://audio-transcriber-dxni.onrender.com/transcribe", {
             method: "POST",
             body: formData,
           });
