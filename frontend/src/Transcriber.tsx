@@ -20,7 +20,7 @@ const Transcriber: React.FC = () => {
     formData.append("file", audioFile);
 
     try {
-      const res = await fetch("https://audio-transcriber-dxni.onrender.com/transcribe", {
+      const res = await fetch("audiotranscriber-production.up.railway.app/transcribe", {
         method: "POST",
         body: formData,
       });
@@ -51,7 +51,7 @@ const Transcriber: React.FC = () => {
         formData.append("file", file);
 
         try {
-          const res = await fetch("https://audio-transcriber-dxni.onrender.com/transcribe", {
+          const res = await fetch("audiotranscriber-production.up.railway.app/transcribe", {
             method: "POST",
             body: formData,
           });
